@@ -11,33 +11,31 @@
 class Solution {
     public int solution(int[] prices) {
         
-        public int maxProfit(int[] prices){
+        // Edge cases: If the input array is null or contains less
+        // than 2 prices, the profit cannot be computed
+        if (prices == null || prices.length < 2){
+            return 0;
+        }
+
+        int globalMin = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        // We iterate through the array looking for the globalMin
+        // purchase price.
+
+        for (int i=0; i<prices.length; i++){
+            if (prices[i] < globalMin){
+                globalMin = prices[i];
+            }
+
+            // A purchase has to be made before a sale. Therefore,
+            // each iteration, we will calculate the difference
+            // between current value (i) and globalMin, and update
+            // maxProfit as necessary.
+            if (maxProfit < (prices[i] - globalMin)){
+                maxProfit = prices[i] - globalMin;
+            }
             
-            // Edge cases: If the input array is null or contains less
-            // than 2 prices, the profit cannot be computed
-            if (prices == null || prices.length < 2){
-                return 0;
-            }
-
-            int globalMin = Integer.MAX_VALUE;
-            int maxProfit = 0;
-
-            // We iterate through the array looking for the globalMin 
-            // purchase price. 
-
-            for (int i=0; i<prices.length; i++){
-                if (prices[i] < globalMin){
-                    globalMin = prices[i];
-                }
-
-                // A purchase has to be made before a sale. Therefore, 
-                // each iteration, we will calculate the difference 
-                // between current value (i) and globalMin, and update 
-                // maxProfit as necessary. 
-                if (maxProfit < (prices[i] - globalMin)){
-                    maxProfit = prices[i] - globalMin;
-                }
-            }
         }
 
         return maxProfit;
