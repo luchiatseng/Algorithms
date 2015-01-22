@@ -26,12 +26,12 @@ class Solution {
             
             // Use a switch statement to check if target is one 
             // of left-, mid- or right-Index values
-            switch(true){
-                target == A[leftIndex]:
+            switch(target){
+                case A[leftIndex] :
                     return leftIndex;
-                target == A[midIndex]:
+                case A[midIndex] :
                     return midIndex;
-                target == A[rightIndex]:
+                case A[rightIndex] :
                     return rightIndex;
             }
 
